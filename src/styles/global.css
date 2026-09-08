@@ -1,0 +1,314 @@
+/* ==========================================================================
+   Ronika Bhatia Portfolio — Psycolops-Exact Design System
+   Theme: Light/White Editorial, Massive Typography, High Contrast
+   ========================================================================== */
+
+:root {
+  /* Color Palette — Bright Editorial */
+  --bg-primary: #FFFFFF;
+  --bg-surface: #FAFAF8;
+  --bg-subtle: #F0EEE9;
+
+  --text-main: #111111;
+  --text-muted: #555555;
+  --text-light: #888888;
+
+  --border-color: #E2E0D8;
+  --accent-color: #111111;
+  --accent-hover: #111111;
+  /* Editorial monochrome dark neutral */
+
+  /* Typography Families */
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-jersey: 'Jersey 15', cursive, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-accent: 'Space Grotesk', monospace;
+  /* Pseudo-monospace metadata role */
+  --font-handdrawn: 'Caveat', 'Playfair Display Italic', serif;
+  --font-pixel: 'VT323', monospace;
+
+  /* Global Grid System Layout & Spacing */
+  --site-max-width: 1720px;
+  --header-height: 64px;
+  --container-padding: clamp(1.25rem, 3vw, 2.5rem);
+
+  /* Easing Functions & Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.25s var(--ease-out-expo);
+  --transition-smooth: 0.6s var(--ease-out-expo);
+  --transition-slow: 0.9s var(--ease-out-expo);
+}
+
+/* Base Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Single Global Container System */
+.container {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.main-content {
+  flex: 1 0 auto;
+  width: 100%;
+  padding-top: 74px;
+}
+
+/* Restrained Editorial Typography Hierarchy (Artwork First) */
+.heading-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.heading-1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.heading-2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.heading-3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.3;
+}
+
+.text-label {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.text-body-lg {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  font-weight: 300;
+}
+
+.text-body {
+  font-size: 0.975rem;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Extreme Whitespace Section Spacing (Psycolops Rhythm) */
+.section {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.section-border-top {
+  border-top: 1px solid var(--border-color);
+}
+
+/* Reusable Typographic Buttons & Touch Interactions */
+.btn-editorial,
+.btn-pill-cta,
+.btn-see-more-work,
+.btn-editorial-dark,
+.discipline-pill,
+.scroll-indicator-btn,
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-editorial:active,
+.btn-pill-cta:active,
+.btn-see-more-work:active,
+.btn-editorial-dark:active,
+.discipline-pill:active,
+.scroll-indicator-btn:active {
+  transform: scale(0.96) !important;
+}
+
+.btn-editorial {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-accent);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1.65rem;
+  border: 1px solid var(--text-main);
+  background-color: var(--text-main);
+  color: var(--bg-primary);
+  border-radius: 50px;
+}
+
+.btn-editorial:hover {
+  background-color: transparent;
+  color: var(--text-main);
+}
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-fast);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Entrance Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s var(--ease-out-expo) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Scroll Reveal Component Styles (Super Slow, Ultra-Smooth Floating Reveal) */
+.scroll-reveal-box {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-y, 80px), 0);
+  transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-box.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-reveal-box {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

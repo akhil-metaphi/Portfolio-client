@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Ronika Bhatia Portfolio — Work Page (Identical to Homepage CSS Blueprint)
+   ========================================================================== */
+
+.psycolops-work-page {
+  width: 100%;
+  background-color: var(--bg-primary);
+}
+
+.psycolops-work-page .psycolops-projects-exhibition {
+  width: 100%;
+  padding: 45px 140px 100px 140px;
+}
+
+.work-page-header {
+  justify-content: center;
+  padding-bottom: 0 !important;
+  margin-bottom: 45px !important;
+}
+
+.work-page-title {
+  font-family: var(--font-jersey, 'Jersey 15', cursive, sans-serif);
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: 400;
+  text-align: center;
+  color: var(--text-main);
+  margin: 0;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 1280px) {
+  .psycolops-work-page .psycolops-projects-exhibition {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .psycolops-work-page .psycolops-projects-exhibition {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .psycolops-work-page .psycolops-projects-exhibition {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .psycolops-work-page .psycolops-projects-exhibition {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

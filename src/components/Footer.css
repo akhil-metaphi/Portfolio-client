@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Ronika Bhatia Portfolio — Psycolops Exact Original Footer CSS Blueprint
+   ========================================================================== */
+
+footer.minimal-footer {
+  width: 100%;
+  background-color: var(--bg-primary);
+  padding: 80px 140px 80px 140px;
+  margin: 0;
+}
+
+.minimal-footer .container {
+  padding: 0;
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+}
+
+.minimal-footer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Headline Title */
+footer h3.footer-cta-headline {
+  text-align: center;
+  font-family: 'Jersey 15', sans-serif;
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+  margin: 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+footer .font-74 {
+  font-size: clamp(34px, 4.2vw, 74px);
+}
+
+@media (min-width: 1551px) {
+  footer .font-74 {
+    font-size: 74px;
+  }
+}
+
+/* Subnav Links Row */
+.footer-link {
+  justify-content: center;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 80px 0 110px;
+  margin: 0;
+  width: 100%;
+}
+
+.footer-link a {
+  color: var(--text-main);
+  text-decoration: none !important;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link a:hover {
+  opacity: 0.6;
+}
+
+/* Contact Block & Social Pills */
+.footer-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+}
+
+footer h3.footer-contact-title {
+  font-family: 'Jersey 15', sans-serif;
+  font-weight: 400;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1;
+}
+
+footer .font-36 {
+  font-size: 32px;
+}
+
+.footet-social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 16px;
+}
+
+.footet-social a {
+  text-decoration: none;
+  color: #111111;
+  background-color: #FFFFFF;
+  border: 1.5px solid #111111;
+  padding: 10px 22px;
+  border-radius: 5px;
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-display);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: none;
+  box-shadow: none;
+}
+
+.footet-social a:last-child {
+  margin-right: 0;
+}
+
+/* Responsive Styles from Original Psycolops CSS Source */
+@media only screen and (min-width: 1291px) and (max-width: 1550px) {
+  .footer-link .experimental-link {
+    padding: 0px;
+  }
+
+  footer .font-74 {
+    font-size: 58px;
+  }
+
+  .footer-link a {
+    font-size: 14px;
+  }
+
+  footer .font-36 {
+    font-size: 30px;
+  }
+
+  .footet-social a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1280px) {
+  footer.minimal-footer {
+    padding: 60px 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  footer.minimal-footer {
+    padding: 50px 40px;
+  }
+
+  footer .font-74 {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer.minimal-footer {
+    padding: 40px 20px 60px 20px;
+  }
+
+  footer h3.footer-cta-headline {
+    font-size: 28px !important;
+    text-align: center;
+  }
+
+  .footer-link {
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footet-social {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footet-social a {
+    padding: 8px 16px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .footer-link a {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  footer.minimal-footer {
+    padding: 36px 14px 50px 14px;
+  }
+
+  footer h3.footer-cta-headline {
+    font-size: 22px !important;
+  }
+}

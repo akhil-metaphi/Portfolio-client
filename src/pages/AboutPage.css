@@ -1,0 +1,386 @@
+/* ==========================================================================
+   Ronika Bhatia Portfolio — Psycolops About Page Blueprint
+   ========================================================================== */
+
+.psycolops-about-page {
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+.psycolops-about-page .container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 140px;
+}
+
+/* -----------------------------------------
+   1. Hero Intro Section (2-Column Grid)
+   ----------------------------------------- */
+.about-hero-section {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-portrait-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--bg-surface, #F7F6F2);
+}
+
+.about-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
+}
+
+.about-hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-greeting-title {
+  font-family: 'Jersey 15', cursive, sans-serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 400;
+  color: var(--text-main, #111111);
+  margin: 0 0 16px 0;
+  line-height: 1.1;
+}
+
+.about-headline {
+  font-family: 'Jersey 15', cursive, sans-serif;
+  font-size: clamp(38px, 4.5vw, 60px);
+  font-weight: 400;
+  color: var(--text-main, #111111);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin: 0 0 32px 0;
+}
+
+.about-cta-wrapper {
+  display: flex;
+}
+
+.about-cta-btn {
+  display: inline-block;
+  background-color: var(--text-main, #111111);
+  color: var(--bg-primary, #FFFFFF);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.about-cta-btn:hover {
+  opacity: 0.85;
+}
+
+/* -----------------------------------------
+   2. Narrative Bio & Secondary Photo
+   ----------------------------------------- */
+.about-bio-section {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  border-top: 1px solid var(--border-color, #E2E0D8);
+}
+
+.about-bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.about-bio-text p {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--text-main, #111111);
+  margin: 0 0 24px 0;
+}
+
+.about-bio-text p:last-child {
+  margin-bottom: 0;
+}
+
+.secondary-photo-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--bg-surface, #F7F6F2);
+}
+
+.secondary-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
+}
+
+/* -----------------------------------------
+   3. Services Section (Matches Homepage 1:1)
+   ----------------------------------------- */
+.about-services-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-top: 1px solid var(--border-color, #E2E0D8);
+}
+
+.services-section-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-main, #111111);
+  margin: 0 0 28px 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.services-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  min-height: 460px;
+  padding: 36px 28px;
+  border-radius: 12px;
+  border: 1.5px solid #111111;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-card-1 {
+  background-color: #F4B8D5;
+}
+
+.service-card-2 {
+  background-color: #C5E838;
+}
+
+.service-card-3 {
+  background-color: #FFB800;
+}
+
+.service-card-4 {
+  background-color: #FFFFFF;
+}
+
+.service-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 180px; /* Guarantees equal Y-level for horizontal line on all cards */
+}
+
+.service-card-icon {
+  width: 40px;
+  height: 40px;
+  color: #111111;
+  stroke-width: 2.2;
+  margin-bottom: 24px;
+}
+
+.service-card-num {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.service-card-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.service-card-bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.service-card-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(17, 17, 17, 0.35);
+  margin: 16px 0 20px 0;
+}
+
+.service-card-desc {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #111111;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* -----------------------------------------
+   4. See More Work Section
+   ----------------------------------------- */
+.about-see-more-section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  border-top: 1px solid var(--border-color, #E2E0D8);
+}
+
+.see-more-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-main, #111111);
+  margin: 0 0 32px 0;
+}
+
+.see-more-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.see-more-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.see-more-card:hover {
+  opacity: 0.88;
+}
+
+.see-more-card-visual {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-surface, #F7F6F2);
+}
+
+.see-more-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+}
+
+.see-more-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.see-more-card-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main, #111111);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.see-more-card-category {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 14px;
+  color: var(--text-muted, #777777);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* -----------------------------------------
+   Responsive Adaptations
+   ----------------------------------------- */
+@media (max-width: 1280px) {
+  .psycolops-about-page .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .psycolops-about-page .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-bio-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .see-more-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .psycolops-about-page .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .psycolops-about-page .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

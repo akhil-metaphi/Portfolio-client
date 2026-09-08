@@ -1,0 +1,882 @@
+/* ==========================================================================
+   Ronika Bhatia Portfolio — Psycolops Exact Structural CSS Blueprint
+   Light/White Theme (#FFFFFF) with Exact Reference Layout & Spacing
+   ========================================================================== */
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+.home-page .container {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+}
+
+/* -----------------------------------------
+   1. Hero Introduction & Positioning Section (Exact Reference Layout)
+   ----------------------------------------- */
+.hero-intro-section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 74px);
+  padding: 25px 80px 50px 80px;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-intro-container {
+  width: 100%;
+  max-width: 1480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  margin: 0 auto;
+}
+
+/* Broad Widescreen 2-Column Grid */
+.hero-broad-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-grid-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+/* Speech Bubble Box */
+.speech-bubble-wrapper {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+}
+
+.speech-bubble-box {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 3px solid #111111;
+  border-radius: 20px;
+  padding: 36px 44px;
+  box-shadow: 7px 7px 0px #111111;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.speech-bubble-box:hover {
+  transform: translateY(-2px);
+}
+
+.speech-bubble-text {
+  font-family: var(--font-handdrawn, 'Caveat', cursive, serif);
+  font-size: 35px;
+  line-height: 1.35;
+  color: #111111;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.bubble-pink-name {
+  background-color: #F8B4D9;
+  padding: 1px 12px;
+  border-radius: 12px;
+  border: 2px solid #111111;
+  display: inline-block;
+  font-weight: 700;
+  transform: rotate(-1deg);
+  margin-right: 2px;
+}
+
+.bubble-yellow-underline {
+  border-bottom: 4px solid #FFB800;
+  font-weight: 700;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.speech-bubble-beak {
+  position: absolute;
+  right: -28px;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+/* Hero Discipline Pills Row */
+.hero-discipline-pills {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+}
+
+.discipline-pill {
+  font-family: var(--font-accent, 'Space Grotesk', monospace);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #111111;
+  padding: 9px 20px;
+  border-radius: 50px;
+  border: 2.5px solid #111111;
+  box-shadow: 3.5px 3.5px 0px #111111;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.discipline-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 5px 5px 0px #111111;
+}
+
+.pill-pink {
+  background-color: #F8B4D9;
+}
+
+.pill-lime {
+  background-color: #C3EB36;
+}
+
+.pill-yellow {
+  background-color: #FFB800;
+}
+
+.pill-white {
+  background-color: #FFFFFF;
+}
+
+/* Right Column: Layered Editorial Article & Photo Collage */
+.hero-grid-right {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Back Layer: Editorial Article Card */
+.hero-art-layer {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  z-index: 1;
+}
+
+.editorial-article-card {
+  width: 295px;
+  height: 420px;
+  background-color: #FFFFFF;
+  border: 2.5px solid #111111;
+  border-radius: 20px;
+  padding: 24px 22px;
+  box-shadow: 6.5px 6.5px 0px #111111;
+  transform: rotate(-7deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.editorial-article-card:hover {
+  transform: rotate(-4deg) scale(1.02);
+}
+
+.article-column-text {
+  font-family: 'Inter', serif;
+  font-size: 9.5px;
+  line-height: 1.55;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0.88;
+}
+
+.article-footer-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1.5px solid #111111;
+  padding-top: 10px;
+  margin-top: 12px;
+}
+
+.article-title-label {
+  font-family: var(--font-accent, 'Space Grotesk', monospace);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #111111;
+}
+
+/* Front Layer: Photo Card */
+.hero-portrait-layer {
+  position: relative;
+  z-index: 2;
+  margin-left: 110px;
+  margin-top: 20px;
+}
+
+.polaroid-tape-strip {
+  width: 90px;
+  height: 28px;
+  background-color: rgba(230, 230, 220, 0.85);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px dashed rgba(17, 17, 17, 0.3);
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%) rotate(-1deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.doodle-sparkle-star {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  z-index: 10;
+}
+
+.portrait-photo-container {
+  position: relative;
+  width: 275px;
+  height: 350px;
+  border: 3px solid #111111;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 7px 7px 0px #111111;
+  background-color: #111111;
+  transform: rotate(2.5deg);
+  transition: transform 0.3s ease;
+}
+
+.portrait-photo-container:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.portrait-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portrait-designer-tag {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  z-index: 12;
+  background-color: #C3EB36;
+  border: 2.5px solid #111111;
+  border-radius: 30px;
+  padding: 7px 18px;
+  font-family: var(--font-accent, 'Space Grotesk', monospace);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #111111;
+  box-shadow: 3.5px 3.5px 0px #111111;
+  white-space: nowrap;
+}
+
+.portrait-badge-tag {
+  position: absolute;
+  bottom: -12px;
+  right: -24px;
+  z-index: 6;
+  background-color: #C5E838;
+  color: #111111;
+  font-family: var(--font-accent, 'Space Grotesk', monospace);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border: 2px solid #111111;
+  border-radius: 24px;
+  box-shadow: 3.5px 3.5px 0px #111111;
+  transform: rotate(4deg);
+  transition: transform 0.25s ease;
+}
+
+.hero-portrait-layer:hover .portrait-badge-tag {
+  transform: rotate(0deg) scale(1.08);
+}
+
+.portrait-frame {
+  position: relative;
+  width: 260px;
+  height: 310px;
+  border: 2.5px solid #111111;
+  border-radius: 20px 255px 20px 255px/255px 20px 255px 20px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0px #111111;
+  transform: rotate(3deg);
+  background-color: var(--bg-subtle);
+  transition: transform 0.3s ease;
+}
+
+.hero-portrait-layer:hover .portrait-frame {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.doodle-sparkle {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.doodle-sparkle.top-right {
+  top: -20px;
+  right: -24px;
+  animation: heroSparkle 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes heroSparkle {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.2) rotate(16deg);
+  }
+}
+
+/* Positioning Container */
+.positioning-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 1720px;
+  margin-top: 16px;
+}
+
+.positioning-statement-text {
+  font-family: var(--font-jersey);
+  font-weight: 400;
+  font-size: clamp(22px, 2.8vw, 44px);
+  line-height: 1.2;
+  color: var(--text-main);
+  margin: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.scroll-indicator-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid #111111;
+  background-color: #111111;
+  color: #FFFFFF;
+  cursor: pointer;
+  animation: bounceSlow 2s ease-in-out infinite;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.scroll-indicator-btn:hover {
+  background-color: #FFFFFF;
+  color: #111111;
+}
+
+@keyframes bounceSlow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.scroll-indicator-btn:hover {
+  transform: translateY(2px);
+}
+
+/* -----------------------------------------
+   2. Featured Work Showcase
+   ----------------------------------------- */
+.psycolops-projects-exhibition {
+  width: 100%;
+  background-color: var(--bg-primary);
+  padding: 100px 140px;
+}
+
+.exhibition-header-row {
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 80px;
+}
+
+.exhibition-header-row .heading-2 {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--font-poppins);
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 30px !important;
+  color: var(--text-main);
+  display: block;
+}
+
+.btn-pill-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 23px;
+  border-radius: 50px;
+  border: none;
+  background-color: #111111;
+  color: #FFFFFF;
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 25px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.psycolops-projects-stack {
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.see-more-work-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-see-more-work {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 32px;
+  border-radius: 50px;
+  border: 1.5px solid #111111;
+  background-color: #111111;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.btn-see-more-work:hover {
+  opacity: 0.85;
+}
+
+/* -----------------------------------------
+   3. About / Bio Section
+   ----------------------------------------- */
+.home-about-section {
+  width: 100%;
+  padding: 70px 140px;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.home-about-container {
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.home-about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.home-about-text {
+  font-family: var(--font-jersey);
+  font-weight: 400;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.35;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.home-about-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.btn-editorial-dark {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: 1.5px solid #111111;
+  background-color: transparent;
+  color: #111111;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-editorial-dark:hover {
+  background-color: #111111;
+  color: #FFFFFF;
+}
+
+.home-about-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -----------------------------------------
+   4. Services Section
+   ----------------------------------------- */
+.home-services-section {
+  width: 100%;
+  padding: 60px 140px 80px 140px;
+  background-color: var(--bg-primary);
+}
+
+.services-section-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin: 0 0 28px 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.services-grid {
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  min-height: 460px;
+  padding: 36px 28px;
+  border-radius: 12px;
+  border: 1.5px solid #111111;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-card-1 {
+  background-color: #F4B8D5;
+}
+
+/* Pastel Pink */
+.service-card-2 {
+  background-color: #C5E838;
+}
+
+/* Vibrant Lime Green */
+.service-card-3 {
+  background-color: #FFB800;
+}
+
+/* Vibrant Golden Yellow */
+.service-card-4 {
+  background-color: #FFFFFF;
+}
+
+/* Clean White */
+
+.service-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 180px;
+  /* Guarantees equal Y-level for horizontal line on all cards */
+}
+
+.service-card-icon {
+  width: 40px;
+  height: 40px;
+  color: #111111;
+  stroke-width: 2.2;
+  margin-bottom: 24px;
+}
+
+.service-card-num {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.service-card-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.service-card-bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.service-card-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(17, 17, 17, 0.35);
+  margin: 16px 0 20px 0;
+}
+
+.service-card-desc {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #111111;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* -----------------------------------------
+   Responsive Adaptations
+   ----------------------------------------- */
+@media (max-width: 1280px) {
+
+  .hero-intro-section,
+  .psycolops-projects-exhibition,
+  .home-about-section,
+  .home-services-section {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 1023px) {
+
+  .hero-intro-section,
+  .psycolops-projects-exhibition,
+  .home-about-section,
+  .home-services-section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero-broad-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-grid-left {
+    align-items: center;
+    width: 100%;
+  }
+
+  .speech-bubble-wrapper {
+    max-width: 540px;
+  }
+
+  .hero-grid-right {
+    margin-top: 20px;
+  }
+
+  .hero-portrait-layer {
+    margin-left: 60px;
+  }
+
+  .hero-intro-container,
+  .home-about-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .home-about-text {
+    font-size: 28px;
+  }
+
+  .positioning-statement-text {
+    white-space: normal;
+    font-size: 28px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero-intro-section,
+  .psycolops-projects-exhibition,
+  .home-about-section,
+  .home-services-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-intro-section {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .speech-bubble-box {
+    padding: 24px 22px;
+  }
+
+  .speech-bubble-text {
+    font-size: 26px;
+  }
+
+  .speech-bubble-beak {
+    right: 50%;
+    top: auto;
+    bottom: -22px;
+    transform: translateX(50%) rotate(90deg);
+  }
+
+  .hero-grid-right {
+    height: 400px;
+  }
+
+  .hero-art-layer {
+    left: 0;
+    top: 10px;
+  }
+
+  .editorial-article-card {
+    width: 250px;
+    height: 350px;
+    padding: 18px 16px;
+  }
+
+  .portrait-photo-container {
+    width: 230px;
+    height: 300px;
+  }
+
+  .hero-portrait-layer {
+    margin-left: 45px;
+    margin-top: 30px;
+  }
+
+  .positioning-statement-text {
+    font-size: 22px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-intro-section,
+  .psycolops-projects-exhibition,
+  .home-about-section,
+  .home-services-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .speech-bubble-box {
+    padding: 18px 16px;
+  }
+
+  .speech-bubble-text {
+    font-size: 22px;
+  }
+
+  .bubble-pink-name {
+    padding: 1px 8px;
+  }
+
+  .hero-art-layer {
+    left: -10px;
+  }
+
+  .editorial-article-card {
+    width: 220px;
+    height: 320px;
+  }
+
+  .portrait-photo-container {
+    width: 200px;
+    height: 270px;
+  }
+
+  .hero-portrait-layer {
+    margin-left: 30px;
+  }
+
+  .positioning-statement-text {
+    font-size: 19px;
+  }
+}

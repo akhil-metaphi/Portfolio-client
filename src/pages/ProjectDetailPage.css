@@ -1,0 +1,403 @@
+/* ==========================================================================
+   Ronika Bhatia Portfolio — Psycolops Exact Project Detail Blueprint
+   ========================================================================== */
+
+.psycolops-project-detail {
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+.psycolops-project-detail .container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 140px;
+}
+
+/* -----------------------------------------
+   1. Hero Header Section
+   ----------------------------------------- */
+.detail-hero-section {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.detail-header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.detail-category-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-accent, 'Space Grotesk', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted, #555555);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.detail-category-tag .divider-bar {
+  color: #CCCCCC;
+}
+
+.detail-title {
+  margin: 0;
+  text-align: left;
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 600;
+  color: var(--text-main, #111111);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.detail-hero-visual {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 600px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-surface, #F7F6F2);
+  border-radius: 16px;
+}
+
+.detail-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+}
+
+/* -----------------------------------------
+   2. Narrative Brief & Metadata Section
+   ----------------------------------------- */
+.detail-narrative-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.narrative-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  padding: 60px 0;
+  border-top: 1px solid var(--border-color, #E2E0D8);
+  border-bottom: 1px solid var(--border-color, #E2E0D8);
+}
+
+.narrative-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted, #777777);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meta-value {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-main, #111111);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.narrative-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.brief-heading {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-main, #111111);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.brief-paragraph {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--text-main, #111111);
+  margin: 0;
+}
+
+/* -----------------------------------------
+   3. Section Divider & Overview Line
+   ----------------------------------------- */
+.detail-divider-section {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.detail-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.divider-label {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted, #777777);
+  text-transform: capitalize;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color, #E2E0D8);
+}
+
+/* -----------------------------------------
+   4. Dynamic Visual Gallery Section
+   ----------------------------------------- */
+.detail-gallery-stack {
+  padding-top: 20px;
+  padding-bottom: 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dynamic-gallery-rows-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.gallery-layout-row {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+/* SINGLE ROW (1 image) - Fixed 16:9 Aspect Ratio */
+.gallery-layout-row.row-single .gallery-image-item {
+  width: 100%;
+  max-width: 100%;
+  flex: 1 1 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* DOUBLE ROW (2 images) - Fixed 4:3 Aspect Ratio */
+.gallery-layout-row.row-double .gallery-image-item {
+  width: calc(50% - 16px);
+  max-width: calc(50% - 16px);
+  flex: 0 0 calc(50% - 16px);
+  aspect-ratio: 4 / 3;
+}
+
+/* TRIPLE ROW (3 images) - Fixed 1:1 Aspect Ratio */
+.gallery-layout-row.row-triple .gallery-image-item {
+  width: calc(33.333% - 21.333px);
+  max-width: calc(33.333% - 21.333px);
+  flex: 0 0 calc(33.333% - 21.333px);
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-image-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-surface, #F7F6F2);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.gallery-visual-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-responsive-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+  box-sizing: border-box;
+}
+
+/* -----------------------------------------
+   5. See More Work Section
+   ----------------------------------------- */
+.detail-see-more-section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  border-top: 1px solid var(--border-color, #E2E0D8);
+}
+
+.see-more-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-main, #111111);
+  margin: 0 0 32px 0;
+}
+
+.see-more-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.see-more-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.see-more-card:hover {
+  opacity: 0.88;
+}
+
+.see-more-card-visual {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-surface, #F7F6F2);
+}
+
+.see-more-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+}
+
+.see-more-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.see-more-card-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main, #111111);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.see-more-card-category {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 14px;
+  color: var(--text-muted, #777777);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* -----------------------------------------
+   Responsive Breakpoints
+   ----------------------------------------- */
+@media (max-width: 1280px) {
+  .psycolops-project-detail .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .psycolops-project-detail .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .narrative-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gallery-layout-row.row-triple {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .gallery-layout-row.row-triple .gallery-image-item {
+    width: calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  .see-more-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .psycolops-project-detail .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .dynamic-gallery-rows-wrapper {
+    gap: 20px;
+  }
+
+  .gallery-layout-row {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .gallery-layout-row.row-single .gallery-image-item,
+  .gallery-layout-row.row-double .gallery-image-item,
+  .gallery-layout-row.row-triple .gallery-image-item {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .psycolops-project-detail .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

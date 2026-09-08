@@ -1,0 +1,415 @@
+/* ==========================================================================
+   Ronika Bhatia Portfolio
+   ProjectCard — Psycolops 12-Column Project System
+   ========================================================================== */
+
+
+/* ==========================================================================
+   01. PROJECT ROW
+   ========================================================================== */
+
+.project-card-row {
+    width: 100%;
+
+    display: block;
+
+    margin-bottom: 0;
+
+    padding: 0;
+
+    opacity: 0;
+
+    transform: translateY(24px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    will-change: opacity, transform;
+}
+
+
+.project-card-row.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.project-card-wrapper {
+    width: 83.333333%;
+
+    max-width: 100%;
+}
+
+
+.project-card-wrapper.align-right {
+    margin-left: auto;
+}
+
+
+/* ==========================================================================
+   02. 12-COLUMN SYSTEM
+   ========================================================================== */
+
+/*
+ * 10 / 12 columns = 83.333%
+ */
+.project-image-col {
+    width: 83.333333%;
+
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+/*
+ * 2 / 12 columns = 16.666%
+ */
+.project-spacer-col {
+    width: 16.666667%;
+
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+/* ==========================================================================
+   03. PROJECT LINK
+   ========================================================================== */
+
+.psycolops-project-link {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   04. PROJECT IMAGE
+   ========================================================================== */
+
+/*
+ * IMPORTANT:
+ *
+ * There is NO fixed height here.
+ *
+ * The artwork determines its own height from its natural aspect ratio.
+ *
+ * This prevents:
+ * - artificial gray space
+ * - cropped artwork
+ * - stretched artwork
+ * - inconsistent project boxes
+ */
+.psycolops-project-visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: none;
+    overflow: hidden;
+    display: block;
+    background: transparent;
+    border-radius: 16px;
+    box-shadow: none;
+
+    opacity: 0;
+    transform: translate3d(0, 80px, 0);
+    transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--card-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.project-card-row.is-visible .psycolops-project-visual {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+
+/*
+ * The image covers the container uniformly.
+ */
+.psycolops-project-img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 14px;
+
+    transform: none;
+
+    transition: transform 0.4s ease;
+}
+
+
+/*
+ * Prevent artificial pseudo elements.
+ */
+.psycolops-project-visual::before,
+.psycolops-project-visual::after {
+    display: none;
+}
+
+
+/* ==========================================================================
+   05. PLACEHOLDER
+   ========================================================================== */
+
+.psycolops-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg-surface, #f7f6f2);
+
+    border-radius: 14px;
+}
+
+
+/* ==========================================================================
+   06. PROJECT INFORMATION
+   ========================================================================== */
+
+.display-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 20px 0px;
+    position: relative;
+    width: 100%;
+
+    opacity: 0;
+    transform: translate3d(0, 56px, 0);
+    transition: opacity 2.0s cubic-bezier(0.16, 1, 0.3, 1), transform 2.0s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: calc(var(--card-delay, 0ms) + 0.15s);
+    will-change: opacity, transform;
+}
+
+.project-card-row.is-visible .display-flex {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.width-custom {
+    width: auto;
+    max-width: 320px;
+    flex: 0 0 auto;
+    margin-left: 15px;
+    box-sizing: border-box;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.subtitle {
+    position: relative;
+    font-family: 'Inter', var(--font-display, sans-serif);
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--text-main, #111111);
+}
+
+.subtitle:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 3px;
+    background-color: var(--text-main, #111111);
+    position: absolute;
+    left: -15px;
+    top: 0px;
+}
+
+.color-grey {
+    font-size: 18px;
+    color: var(--text-main, #111111);
+    font-weight: 400;
+    font-family: 'Inter', var(--font-display, sans-serif);
+}
+
+h6.color-grey {
+    color: var(--text-muted, #555555);
+    margin: 4px 0 0 0;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Inter', var(--font-display, sans-serif);
+    line-height: 1.35;
+}
+
+p.mt-2.color-grey {
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-main, #111111);
+    font-weight: 400;
+    font-family: 'Inter', var(--font-display, sans-serif);
+    line-height: 1.5;
+    flex: 1;
+}
+
+p.mt-2.color-grey:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 2px;
+    background-color: var(--text-main, #111111);
+    position: absolute;
+    left: -24px;
+    top: 0px;
+}
+
+a.title-link {
+    text-decoration: none;
+    color: var(--text-main, #111111);
+}
+
+
+/* ==========================================================================
+   07. RESPONSIVE MEDIA QUERIES (Exact Inspect Breakpoints)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .project-card-wrapper {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .project-card-row {
+        margin-bottom: 24px;
+    }
+
+    .psycolops-project-visual {
+        border-radius: 14px;
+    }
+
+    .display-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 14px 0 20px 0;
+    }
+
+    .width-custom {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .subtitle:before {
+        display: none;
+    }
+
+    .subtitle,
+    .position-relative h5.subtitle {
+        font-size: 21px;
+    }
+
+    h6.color-grey {
+        font-size: 15px;
+        margin-top: 2px;
+    }
+
+    p.mt-2.color-grey {
+        margin: 4px 0 0 0 !important;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    p.mt-2.color-grey:before {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .subtitle,
+    .position-relative h5.subtitle {
+        font-size: 19px;
+    }
+
+    h6.color-grey,
+    p.mt-2.color-grey {
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================================================
+   14. HOVER BEHAVIOUR
+   ========================================================================== */
+
+/*
+ * Explicitly prevent the project link itself from scaling/moving.
+ */
+.psycolops-project-link {
+    transform: none;
+
+    transition: none;
+}
+
+
+/*
+ * No pseudo-element overlay.
+ */
+.psycolops-project-link::before,
+.psycolops-project-link::after {
+    display: none !important;
+
+    content: none !important;
+}
+
+
+/* ==========================================================================
+   15. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .psycolops-project-row {
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        transition: none !important;
+    }
+
+
+    .psycolops-project-img {
+        transform: none !important;
+
+        transition: none !important;
+    }
+
+
+    .psycolops-project-link:hover .psycolops-project-img {
+        transform: none !important;
+    }
+}
+
+
+/* ==========================================================================
+   END OF PROJECTCARD.CSS
+   ========================================================================== */

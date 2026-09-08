@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Ronika Bhatia Portfolio — Infinite Looping 7-Project Carousel
+   ========================================================================== */
+
+.project-carousel-section {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  border-top: 1px solid var(--border-color, #E2E0D8);
+}
+
+.carousel-header {
+  margin-bottom: 36px;
+}
+
+.carousel-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-main, #111111);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Outer Wrapper for Side Floating Navigation Arrows */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+/* Floating Side Navigation Arrows (Matching Psycolops Reference) */
+.carousel-side-arrow {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  z-index: 25;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #111111;
+  border: 1.5px solid #111111;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.2, 0, 0.2, 1);
+  outline: none;
+}
+
+.carousel-side-arrow.arrow-left {
+  left: -26px;
+}
+
+.carousel-side-arrow.arrow-right {
+  right: -26px;
+}
+
+.carousel-side-arrow:hover {
+  background-color: #111111;
+  color: #FFFFFF;
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-side-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Inner Sliding Viewport */
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  will-change: transform;
+}
+
+.carousel-card {
+  flex: 0 0 calc((100% - 60px) / 3);
+  width: calc((100% - 60px) / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.carousel-card:hover {
+  opacity: 0.88;
+}
+
+.carousel-card-visual {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-surface, #F7F6F2);
+}
+
+.carousel-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+}
+
+.carousel-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.carousel-card-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.carousel-card-bar {
+  width: 3.5px;
+  height: 20px;
+  background-color: var(--accent-orange, #FF5500);
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.carousel-card-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main, #111111);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.carousel-card-category-tag {
+  font-weight: 400;
+  color: var(--text-muted, #666666);
+  font-size: 15px;
+  margin-left: 4px;
+}
+
+.carousel-card-desc {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 11.5px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* -----------------------------------------
+   Responsive Adaptations
+   ----------------------------------------- */
+@media (max-width: 1023px) {
+  .carousel-card {
+    flex: 0 0 calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
+  }
+
+  .carousel-side-arrow.arrow-left {
+    left: -16px;
+  }
+
+  .carousel-side-arrow.arrow-right {
+    right: -16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-card {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .carousel-side-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .carousel-side-arrow.arrow-left {
+    left: -10px;
+  }
+
+  .carousel-side-arrow.arrow-right {
+    right: -10px;
+  }
+}

@@ -1,0 +1,146 @@
+import React, { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { getProjectBySlug, PROJECTS } from '../data/projects.ts';
+import ProjectCarousel from '../components/ProjectCarousel';
+import './ProjectDetailPage.css';
+import { generateProjectImageRows } from '../utils/imageLayout';
+
+export default function ProjectDetailPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const project = slug ? getProjectBySlug(slug) : undefined;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  if (!project) {
+    return (
+      <div className="container section text-center" style={{ paddingTop: '4rem' }}>
+        <h1 className="heading-2">Project Not Found</h1>
+        <Link to="/work" className="btn-editorial" style={{ marginTop: '1.5rem' }}>
+          Back to Work Index
+        </Link>
+      </div>
+    );
+  }
+
+  const galleryItems = (project.images || []).map((img, idx) => ({
+    src: img,
+    caption: `Visual Output ${String(idx + 1).padStart(2, '0')}`,
+    originalIndex: idx
+  }));
+
+  // Dynamic row distribution calculated via generateProjectImageRows algorithm
+  const imageRows = generateProjectImageRows(galleryItems);
+
+  const otherProjects = PROJECTS.filter(p => p.slug !== slug);
+
+  return (
+    <article className="psycolops-project-detail animate-fade-in">
+      {/* 1. Header & Title Section */}
+      <section className="detail-hero-section">
+        <div className="container">
+          <div className="detail-header-block">
+            <div className="detail-category-tag">
+              <span>{project.category.toUpperCase()}</span>
+              {project.tags && project.tags[0] && (
+                <>
+                  <span className="divider-bar">|</span>
+                  <span>{project.tags[0].toUpperCase()}</span>
+                </>
+              )}
+              <span className="divider-bar">|</span>
+              <span>{project.year}</span>
+            </div>
+            
+            <h1 className="detail-title">{project.title}</h1>
+          </div>
+
+          <div className="detail-hero-visual">
+            <img 
+              src={project.heroImage} 
+              alt={project.title} 
+              className="detail-hero-img" 
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 2. 2-Column Metadata & Brief Section */}
+      <section className="detail-narrative-section">
+        <div className="container">
+          <div className="narrative-grid">
+            <div className="narrative-meta">
+              <div className="meta-item">
+                <span className="meta-label">CLIENT</span>
+                <p className="meta-value">{project.client || 'Independent Project'}</p>
+              </div>
+              <div className="meta-item">
+                <span className="meta-label">SERVICES / DELIVERABLES</span>
+                <p className="meta-value">{project.tags ? project.tags.join(', ') : project.category}</p>
+              </div>
+              <div className="meta-item">
+                <span className="meta-label">ROLE</span>
+                <p className="meta-value">{project.role || 'Visual Designer'}</p>
+              </div>
+              <div className="meta-item">
+                <span className="meta-label">YEAR</span>
+                <p className="meta-value">{project.year}</p>
+              </div>
+            </div>
+            
+            <div className="narrative-text">
+              <h3 className="brief-heading">Brief:</h3>
+              <p className="brief-paragraph">{project.description}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Section Divider line (Overview) */}
+      <section className="detail-divider-section">
+        <div className="container">
+          <div className="detail-section-divider">
+            <span className="divider-label">Overview</span>
+            <div className="divider-line"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Dynamic Visual Gallery Section */}
+      {imageRows.length > 0 && (
+        <section className="detail-gallery-stack">
+          <div className="container">
+            <div className="dynamic-gallery-rows-wrapper">
+              {imageRows.map((row, rowIndex) => {
+                const rowTypeClass = row.length === 1 ? 'row-single' : row.length === 2 ? 'row-double' : 'row-triple';
+                return (
+                  <div 
+                    key={rowIndex} 
+                    className={`gallery-layout-row ${rowTypeClass}`}
+                  >
+                    {row.map((item) => (
+                      <div key={item.originalIndex} className="gallery-image-item">
+                        <div className="gallery-visual-frame">
+                          <img 
+                            src={item.src} 
+                            alt={item.caption} 
+                            loading="lazy"
+                            className="gallery-responsive-img"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 5. "See More Work" Section (Carousel) */}
+      <ProjectCarousel projects={otherProjects} title="Selected Projects & Visual Explorations:" />
+    </article>
+  );
+}
