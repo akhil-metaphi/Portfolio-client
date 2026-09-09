@@ -373,8 +373,54 @@
     padding-right: 20px;
   }
 
+  .about-portrait-wrapper {
+    aspect-ratio: 4 / 3;
+    max-height: 340px;
+  }
+
+  .secondary-photo-wrapper {
+    aspect-ratio: 4 / 3;
+    max-height: 340px;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    min-height: auto;
+    padding: 26px 20px;
+    border-radius: 14px;
+  }
+
+  .service-card-top {
+    height: auto;
+    margin-bottom: 8px;
+  }
+
+  .service-card-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 14px;
+  }
+
+  .service-card-num {
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  .service-card-title {
+    font-size: 22px;
+  }
+
+  .service-card-divider {
+    margin: 12px 0 14px 0;
+  }
+
+  .service-card-desc {
+    font-size: 14px;
+    line-height: 1.45;
   }
 }
 

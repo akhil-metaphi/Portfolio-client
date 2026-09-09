@@ -40,7 +40,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
   margin: 0 auto;
 }
 
@@ -370,15 +369,20 @@
   }
 }
 
-/* Positioning Container */
-.positioning-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+/* Positioning Statement & Scroll Button Wrappers (Independent Motion) */
+.positioning-statement-wrapper {
   width: 100%;
   max-width: 1720px;
-  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.scroll-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
 }
 
 .positioning-statement-text {
@@ -406,13 +410,13 @@
   background-color: #111111;
   color: #FFFFFF;
   cursor: pointer;
-  animation: bounceSlow 2s ease-in-out infinite;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .scroll-indicator-btn:hover {
   background-color: #FFFFFF;
   color: #111111;
+  transform: translateY(2px);
 }
 
 @keyframes bounceSlow {
@@ -733,7 +737,7 @@
 
   .hero-broad-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .hero-grid-left {
@@ -743,10 +747,11 @@
 
   .speech-bubble-wrapper {
     max-width: 540px;
+    width: 100%;
   }
 
   .hero-grid-right {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .hero-portrait-layer {
@@ -756,7 +761,7 @@
   .hero-intro-container,
   .home-about-container {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
 
   .home-about-text {
@@ -765,11 +770,28 @@
 
   .positioning-statement-text {
     white-space: normal;
-    font-size: 28px;
+    font-size: 26px;
+    text-align: center;
   }
 
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-only-br {
+    display: none;
+  }
+
+  .speech-bubble-text {
+    font-size: clamp(20px, 5.2vw, 28px);
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .speech-bubble-box {
+    padding: 22px 20px;
   }
 }
 
@@ -779,21 +801,30 @@
   .psycolops-projects-exhibition,
   .home-about-section,
   .home-services-section {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .hero-intro-section {
-    padding-top: 20px;
-    padding-bottom: 30px;
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+
+  .speech-bubble-wrapper {
+    width: 100%;
+    max-width: 100%;
   }
 
   .speech-bubble-box {
-    padding: 24px 22px;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 16px;
+    box-sizing: border-box;
   }
 
   .speech-bubble-text {
-    font-size: 26px;
+    font-size: clamp(19px, 5.5vw, 24px);
+    line-height: 1.35;
   }
 
   .speech-bubble-beak {
@@ -804,79 +835,145 @@
   }
 
   .hero-grid-right {
-    height: 400px;
+    height: 380px;
+    width: 100%;
+    max-width: 340px;
+    margin: 10px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
   }
 
   .hero-art-layer {
-    left: 0;
+    position: absolute;
+    left: 8px;
     top: 10px;
+    z-index: 1;
   }
 
   .editorial-article-card {
-    width: 250px;
-    height: 350px;
-    padding: 18px 16px;
-  }
-
-  .portrait-photo-container {
-    width: 230px;
-    height: 300px;
+    width: 225px;
+    height: 330px;
+    padding: 16px 14px;
+    transform: rotate(-3deg);
   }
 
   .hero-portrait-layer {
-    margin-left: 45px;
-    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+    margin-left: 55px;
+    margin-top: 25px;
+  }
+
+  .portrait-photo-container {
+    width: 205px;
+    height: 275px;
+    transform: rotate(2deg);
+  }
+
+  .portrait-designer-tag {
+    font-size: 10.5px;
+    padding: 5px 14px;
+    bottom: -8px;
+    right: -6px;
   }
 
   .positioning-statement-text {
-    font-size: 22px;
+    font-size: 20px;
+    padding: 0 10px;
+    line-height: 1.3;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    min-height: auto;
+    padding: 26px 20px;
+    border-radius: 14px;
+  }
+
+  .service-card-top {
+    height: auto;
+    margin-bottom: 8px;
+  }
+
+  .service-card-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 14px;
+  }
+
+  .service-card-num {
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  .service-card-title {
+    font-size: 22px;
+  }
+
+  .service-card-divider {
+    margin: 12px 0 14px 0;
+  }
+
+  .service-card-desc {
+    font-size: 14px;
+    line-height: 1.45;
   }
 }
 
 @media (max-width: 380px) {
+
   .hero-intro-section,
   .psycolops-projects-exhibition,
   .home-about-section,
   .home-services-section {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .speech-bubble-box {
-    padding: 18px 16px;
+    padding: 16px 12px;
   }
 
   .speech-bubble-text {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .bubble-pink-name {
-    padding: 1px 8px;
+    padding: 1px 6px;
+  }
+
+  .hero-grid-right {
+    height: 330px;
+    max-width: 290px;
   }
 
   .hero-art-layer {
-    left: -10px;
+    left: 4px;
   }
 
   .editorial-article-card {
-    width: 220px;
-    height: 320px;
+    width: 195px;
+    height: 290px;
+    padding: 12px 10px;
   }
 
   .portrait-photo-container {
-    width: 200px;
-    height: 270px;
+    width: 175px;
+    height: 235px;
   }
 
   .hero-portrait-layer {
-    margin-left: 30px;
+    margin-left: 40px;
   }
 
   .positioning-statement-text {
-    font-size: 19px;
+    font-size: 17px;
   }
 }

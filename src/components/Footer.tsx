@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Contact Block */}
         <div className="footer-contact-block">
           <h3 className="footer-contact-title font-36">Contact</h3>
-          <div className="footet-social">
+          <div className="footer-social-pills">
             {socialLinks.map((link) => (
               <a
                 key={link.name}

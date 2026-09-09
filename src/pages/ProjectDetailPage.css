@@ -378,6 +378,12 @@
     padding-right: 20px;
   }
 
+  .narrative-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 14px;
+  }
+
   .dynamic-gallery-rows-wrapper {
     gap: 20px;
   }

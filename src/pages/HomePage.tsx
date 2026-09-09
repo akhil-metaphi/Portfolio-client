@@ -60,8 +60,8 @@ export default function HomePage() {
               <div className="speech-bubble-wrapper">
                 <div className="speech-bubble-box">
                   <p className="speech-bubble-text">
-                    Hi! I'm <span className="bubble-pink-name">Ronika</span>.<br />
-                    I design, illustrate &amp; explore ideas<br />
+                    Hi! I'm <span className="bubble-pink-name">Ronika</span>.<br className="desktop-only-br" />
+                    I design, illustrate &amp; explore ideas<br className="desktop-only-br" />
                     that feel <span className="bubble-yellow-underline">human.</span>
                   </p>
 
@@ -132,11 +132,14 @@ export default function HomePage() {
 
           </div>
 
-          {/* Positioning Statement & Scroll Chevron */}
-          <ScrollReveal className="positioning-container" delay={250}>
+          {/* Positioning Statement & Scroll Chevron — Independent Scroll Reveals */}
+          <ScrollReveal className="positioning-statement-wrapper" delay={250}>
             <p className="positioning-statement-text">
               *Designs experiences with emphasis on visual design strategies &amp; systems
             </p>
+          </ScrollReveal>
+
+          <ScrollReveal className="scroll-btn-wrapper" delay={380}>
             <button
               className="scroll-indicator-btn"
               onClick={scrollToWork}

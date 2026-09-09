@@ -105,6 +105,14 @@
   color: #111111;
 }
 
+.lightbox-btn,
+.lightbox-nav-btn {
+  min-width: 44px;
+  min-height: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .lightbox-caption-bar {
   text-align: center;
   padding-top: 1rem;
@@ -116,4 +124,24 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 600px) {
+  .lightbox-overlay {
+    padding: 1rem 0.75rem;
+  }
+
+  .lightbox-image-wrapper {
+    max-width: 96vw;
+    max-height: 72vh;
+  }
+
+  .lightbox-image {
+    max-height: 72vh;
+  }
+
+  .lightbox-nav-btn {
+    padding: 0.6rem;
+    background-color: rgba(17, 17, 17, 0.6);
+  }
 }

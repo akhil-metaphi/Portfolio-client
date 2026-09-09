@@ -93,7 +93,7 @@ footer .font-36 {
   font-size: 32px;
 }
 
-.footet-social {
+.footer-social-pills {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -101,26 +101,27 @@ footer .font-36 {
   gap: 16px;
 }
 
-.footet-social a {
-  text-decoration: none;
-  color: #111111;
-  background-color: #FFFFFF;
-  border: 1.5px solid #111111;
-  padding: 10px 22px;
-  border-radius: 5px;
-  margin-right: 20px;
-  font-size: 18px;
-  font-weight: 500;
+.footer-pill-btn {
   font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF !important;
+  background-color: #111111 !important;
+  border: 1.5px solid #111111;
+  padding: 10px 24px;
+  border-radius: 5px;
+  text-decoration: none !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: none;
-  box-shadow: none;
+  min-height: 44px;
+  box-shadow: 0 4px 12px rgba(17, 17, 17, 0.12);
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.footet-social a:last-child {
-  margin-right: 0;
+.footer-pill-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 /* Responsive Styles from Original Psycolops CSS Source */
@@ -141,8 +142,9 @@ footer .font-36 {
     font-size: 30px;
   }
 
-  .footet-social a {
-    font-size: 16px;
+  .footer-pill-btn {
+    font-size: 15px;
+    padding: 9px 20px;
   }
 }
 
@@ -164,7 +166,8 @@ footer .font-36 {
 
 @media (max-width: 768px) {
   footer.minimal-footer {
-    padding: 40px 20px 60px 20px;
+    padding: 40px 20px 110px 20px;
+    padding-bottom: max(110px, calc(70px + env(safe-area-inset-bottom)));
   }
 
   footer h3.footer-cta-headline {
@@ -182,27 +185,37 @@ footer .font-36 {
     justify-content: center;
   }
 
-  .footet-social {
+  .footer-contact-block {
+    align-items: center;
     text-align: center;
-    justify-content: center;
   }
 
-  .footet-social a {
-    padding: 8px 16px;
-    margin-right: 8px;
-    margin-bottom: 8px;
+  .footer-social-pills {
+    justify-content: center;
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+
+  .footer-pill-btn {
+    padding: 10px 20px;
     font-size: 14px;
+    min-height: 44px;
   }
 
   .footer-link a {
     font-size: 13px;
     margin-bottom: 0;
+    padding: 8px 12px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }
 
 @media (max-width: 380px) {
   footer.minimal-footer {
-    padding: 36px 14px 50px 14px;
+    padding: 36px 14px 100px 14px;
+    padding-bottom: max(100px, calc(60px + env(safe-area-inset-bottom)));
   }
 
   footer h3.footer-cta-headline {

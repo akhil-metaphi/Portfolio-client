@@ -26,6 +26,17 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   };
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header className="navbar-header">
       <div className="container navbar-container">
@@ -68,13 +79,21 @@ export default function Navbar() {
               <NavLink
                 key={item.path}
                 to={item.path}
-                className="mobile-nav-link"
+                className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
                 onClick={closeMobileMenu}
               >
                 {item.label}
               </NavLink>
             ))}
           </nav>
+
+          <div className="mobile-drawer-footer">
+            <p className="mobile-drawer-tagline">Visual Designer &amp; Illustrator</p>
+            <div className="mobile-drawer-pills">
+              <a href="mailto:ronikbhatia@gmail.com" className="mobile-drawer-pill">GMail</a>
+              <a href="https://instagram.com/ronika2304" target="_blank" rel="noreferrer" className="mobile-drawer-pill">Instagram</a>
+            </div>
+          </div>
         </div>
       )}
     </header>

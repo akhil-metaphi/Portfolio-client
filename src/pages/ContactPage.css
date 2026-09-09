@@ -68,11 +68,12 @@
 .huge-contact-link {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.35rem, 3vw, 2.25rem);
+  font-size: clamp(1.2rem, 3.5vw, 2.25rem);
   color: var(--text-main);
   display: inline-block;
   align-self: center;
   text-align: center;
+  word-break: break-word;
 }
 
 .huge-contact-link:hover {
