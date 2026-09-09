@@ -25,8 +25,7 @@
 .hero-intro-section {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 74px);
-  padding: 25px 80px 50px 80px;
+  padding: 20px 80px 24px 80px;
   background-color: var(--bg-primary);
   display: flex;
   flex-direction: column;
@@ -375,14 +374,14 @@
   max-width: 1720px;
   display: flex;
   justify-content: center;
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .scroll-btn-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 36px;
+  margin-top: 20px;
 }
 
 .positioning-statement-text {
