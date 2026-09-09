@@ -374,14 +374,14 @@
   max-width: 1720px;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .scroll-btn-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 32px;
 }
 
 .positioning-statement-text {
@@ -402,8 +402,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 1.5px solid #111111;
   background-color: #111111;
@@ -440,7 +440,7 @@
 .psycolops-projects-exhibition {
   width: 100%;
   background-color: var(--bg-primary);
-  padding: 30px 140px 80px 140px;
+  padding: 65px 140px 80px 140px;
 }
 
 .exhibition-header-row {
