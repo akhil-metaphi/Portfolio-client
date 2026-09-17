@@ -18,15 +18,14 @@
   --accent-hover: #111111;
   /* Editorial monochrome dark neutral */
 
-  /* Typography Families */
-  --font-display: 'Inter', system-ui, sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-jersey: 'Jersey 15', cursive, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-accent: 'Space Grotesk', monospace;
-  /* Pseudo-monospace metadata role */
-  --font-handdrawn: 'Caveat', 'Playfair Display Italic', serif;
-  --font-pixel: 'VT323', monospace;
+  /* Typography Families — Clean, Editorial, Minimal */
+  --font-display: 'Jost', sans-serif;
+  --font-poppins: 'Jost', sans-serif;
+  --font-jersey: 'Jost', sans-serif; /* Removed cartoon font */
+  --font-body: 'Jost', sans-serif;
+  --font-accent: 'Jost', sans-serif;
+  --font-handdrawn: 'Playfair Display', serif; /* Kept for specific elegant italic highlights */
+  --font-pixel: 'Jost', sans-serif; /* Removed pixel font */
 
   /* Global Grid System Layout & Spacing */
   --site-max-width: 1720px;

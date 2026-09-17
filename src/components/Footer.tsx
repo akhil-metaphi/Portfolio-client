@@ -19,7 +19,7 @@ export default function Footer() {
   const socialLinks: SocialLink[] = [
     { name: 'Instagram', url: 'https://instagram.com/ronika2304', isExternal: true },
     { name: 'LinkedIn', url: 'https://linkedin.com', isExternal: true },
-    { name: 'GMail', url: 'mailto:ronikbhatia@gmail.com', isExternal: false }
+    { name: 'Gmail', url: 'mailto:ronikbhatia@gmail.com', isExternal: false }
   ];
 
   return (
