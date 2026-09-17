@@ -1,12 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Layers, MousePointer, Layout, Palette } from 'lucide-react';
-import { PROJECTS } from '../data/projects.ts';
+import { PROJECTS, getStandoutWorks, StandoutWork } from '../data/projects.ts';
 import ProjectCard from '../components/ProjectCard';
 import ScrollReveal from '../components/ScrollReveal';
+import ServicesSection from '../components/ServicesSection';
 import './HomePage.css';
 
 export default function HomePage() {
+  const standoutWorks = React.useMemo(() => getStandoutWorks(), []);
+  const [colCount, setColCount] = React.useState(3);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) setColCount(1);
+      else if (window.innerWidth < 1024) setColCount(2);
+      else setColCount(3);
+    };
+    
+    // Initial call
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const getColumns = (items: StandoutWork[], count: number) => {
+    const cols: StandoutWork[][] = Array.from({ length: count }, () => []);
+    items.forEach((item, i) => {
+      cols[i % count].push(item);
+    });
+    return cols;
+  };
+
+  const masonryColumns = getColumns(standoutWorks, colCount);
   const scrollToWork = () => {
     const workElem = document.getElementById('featured-work-section');
     if (workElem) {
@@ -14,142 +41,33 @@ export default function HomePage() {
     }
   };
 
-  const servicesData = [
-    {
-      num: '01.',
-      icon: Layers,
-      title: 'Branding',
-      desc: 'Visual identities, brand strategy, typography systems, logo design, and brand guidelines for contemporary projects.',
-      bgClass: 'service-card-1'
-    },
-    {
-      num: '02.',
-      icon: MousePointer,
-      title: 'Graphic Design',
-      desc: 'Publication design, editorial layouts, poster series, signage, packaging, and print production collateral.',
-      bgClass: 'service-card-2'
-    },
-    {
-      num: '03.',
-      icon: Layout,
-      title: 'Illustration',
-      desc: 'Editorial artwork, character sketches, vector art, digital sketchbook entries, and custom brand motifs.',
-      bgClass: 'service-card-3'
-    },
-    {
-      num: '04.',
-      icon: Palette,
-      title: 'Art Direction',
-      desc: 'Photographic styling, spatial curation, object staging, visual atmosphere, and narrative storytelling.',
-      bgClass: 'service-card-4'
-    }
-  ];
-
   return (
     <main className="home-page animate-fade-in">
 
-      {/* 1. HERO SECTION */}
-      <section className="hero-intro-section">
-        <div className="container hero-intro-container">
+      {/* 1. HERO SECTION - Editorial Artwork Led */}
+      <section className="editorial-hero-section">
+        <div className="container editorial-hero-container">
+          <div className="editorial-hero-composition full-bleed-wrapper">
+            <img
+              src="/assets/Client/HeroImage.png"
+              alt="Ronika Bhatia Artwork"
+              className="editorial-hero-bg-img"
+            />
 
-          {/* Broad Widescreen 2-Column Grid */}
-          <div className="hero-broad-grid">
-
-            {/* Left Column: Greeting Speech Bubble */}
-            <ScrollReveal className="hero-grid-left" delay={0}>
-              <div className="speech-bubble-wrapper">
-                <div className="speech-bubble-box">
-                  <p className="speech-bubble-text">
-                    Hi! I'm <span className="bubble-pink-name">Ronika</span>.<br className="desktop-only-br" />
-                    I design, illustrate &amp; explore ideas<br className="desktop-only-br" />
-                    that feel <span className="bubble-yellow-underline">human.</span>
-                  </p>
-
-                  <div className="speech-bubble-beak">
-                    <svg width="34" height="28" viewBox="0 0 34 28" fill="none">
-                      <path d="M2 2 L30 14 L2 26 Z" fill="#FFFFFF" stroke="#111111" strokeWidth="2.5" strokeLinejoin="round" />
-                      <line x1="2" y1="3" x2="2" y2="25" stroke="#FFFFFF" strokeWidth="4" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Right Column: Layered Editorial Article & Photo Collage */}
-            <ScrollReveal className="hero-grid-right" delay={150}>
-
-              {/* Back Layer: Magazine / Article Page Mockup */}
-              <div className="hero-art-layer">
-                <div className="editorial-article-card">
-                  <div className="article-column-text">
-                    <p>
-                      Designing visual narrative ecosystems that connect deeply with human emotions and brand identities.
-                    </p>
-                    <p>
-                      Through intentional typography, organic sketch motifs, and editorial curation, every visual artifact tells a unique story across physical &amp; digital media.
-                    </p>
-                    <p>
-                      Exploring visual concepts, editorial layouts, poster design, and identity systems.
-                    </p>
-                  </div>
-                  <div className="article-footer-row">
-                    <div className="article-artwork-doodle">
-                      <svg width="50" height="40" viewBox="0 0 50 40" fill="none">
-                        <path d="M5 35 C 15 10, 35 10, 45 35 Z" fill="#9333EA" opacity="0.75" />
-                        <circle cx="25" cy="18" r="7" fill="#F59E0B" />
-                        <path d="M10 38 Q 25 20 40 38" stroke="#111111" strokeWidth="2" fill="none" />
-                      </svg>
-                    </div>
-                    <div className="article-title-label">EDITORIAL ART ✦</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Front Layer: Ronika's Main Portrait Card */}
-              <div className="hero-portrait-layer">
-                <div className="polaroid-tape-strip" />
-
-                <div className="doodle-sparkle-star">
-                  <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-                    <path d="M17 0L19.5 14.5L34 17L19.5 19.5L17 34L14.5 19.5L0 17L14.5 14.5L17 0Z" fill="#111111" />
-                  </svg>
-                </div>
-
-                <div className="portrait-photo-container">
-                  <img
-                    src="/assets/AboutMe/IMG_1423_JPG.avif"
-                    alt="Ronika Bhatia"
-                    className="portrait-photo-img"
-                  />
-
-                  <div className="portrait-designer-tag">
-                    VISUAL DESIGNER
-                  </div>
-                </div>
-              </div>
-
-            </ScrollReveal>
-
+            <div className="editorial-hero-overlay-left">
+              <ScrollReveal delay={0}>
+                <p className="editorial-styled-quote">
+                  Works of art<br />
+                  make rules,<br />
+                  rules <span className="highlight-script">do not</span>&nbsp;&nbsp;&nbsp;make<br />
+                  works of art.
+                </p>
+                <p className="editorial-quote-author">
+                  — Claude Debussy
+                </p>
+              </ScrollReveal>
+            </div>
           </div>
-
-          {/* Positioning Statement & Scroll Chevron — Independent Scroll Reveals */}
-          <ScrollReveal className="positioning-statement-wrapper" delay={250}>
-            <p className="positioning-statement-text">
-              *Designs experiences with emphasis on visual design strategies &amp; systems
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal className="scroll-btn-wrapper" delay={380}>
-            <button
-              className="scroll-indicator-btn"
-              onClick={scrollToWork}
-              aria-label="Scroll down to featured work"
-              title="Scroll down"
-            >
-              <ChevronDown size={18} />
-            </button>
-          </ScrollReveal>
-
         </div>
       </section>
 
@@ -167,15 +85,27 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* Alternating Project Stack (Top 5 Featured Projects) */}
-          <div className="psycolops-projects-stack">
-            {PROJECTS.slice(0, 5).map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                index={index}
-                total={5}
-              />
+          {/* Standout Work Masonry Showcase */}
+          <div className="standout-masonry-grid" style={{ '--col-count': colCount } as React.CSSProperties}>
+            {masonryColumns.map((col, colIndex) => (
+              <div key={`col-${colIndex}`} className="standout-masonry-column">
+                {col.map((work) => (
+                  <ScrollReveal key={work.id}>
+                    <Link to={`/project/${work.projectSlug}`} className="standout-item">
+                      <img
+                        src={work.imageUrl}
+                        alt={work.title}
+                        className="standout-image"
+                        loading="lazy"
+                      />
+                      <div className="standout-label-overlay">
+                        <h3 className="standout-title">{work.title}</h3>
+                        <p className="standout-category">{work.category}</p>
+                      </div>
+                    </Link>
+                  </ScrollReveal>
+                ))}
+              </div>
             ))}
           </div>
 
@@ -196,7 +126,7 @@ export default function HomePage() {
         <div className="container home-about-container">
           <ScrollReveal className="home-about-content" delay={0}>
             <h2 className="home-about-text">
-              Hello, I am Ronika ✨. I am a Visual Designer &amp; Illustrator based in India. Graphic design is my passion 🙏. I create thoughtful branding with human visual narratives 💥 which are sure to captivate people 👀.
+              Hello, I am Ronika. I am a Visual Designer &amp; Illustrator based in India. Graphic design is my passion. I create thoughtful branding with human visual narratives which are sure to captivate people.
             </h2>
             <div className="home-about-actions">
               <Link to="/about" className="btn-editorial-dark">
@@ -209,45 +139,17 @@ export default function HomePage() {
           </ScrollReveal>
 
           <ScrollReveal className="home-about-visual" delay={150}>
-            <div className="portrait-frame secondary">
-              <img
-                src="/assets/AboutMe/IMG_1423_JPG.avif"
-                alt="Ronika Bhatia"
-                className="portrait-img"
-              />
-            </div>
+            <img
+              src="/assets/AboutMe/IMG_1423_JPG.avif"
+              alt="Ronika Bhatia"
+              className="about-clean-img"
+            />
           </ScrollReveal>
         </div>
       </section>
 
       {/* 5. SERVICES SECTION */}
-      <section className="home-services-section">
-        <div className="container">
-          <ScrollReveal>
-            <p className="services-section-title">Services I offer:</p>
-          </ScrollReveal>
-          <div className="services-grid">
-            {servicesData.map((s, idx) => {
-              const IconComp = s.icon;
-              return (
-                <ScrollReveal key={s.num} delay={idx * 100}>
-                  <div className={`service-card ${s.bgClass}`}>
-                    <div className="service-card-top">
-                      <IconComp className="service-card-icon" size={36} />
-                      <span className="service-card-num">{s.num}</span>
-                      <h3 className="service-card-title">{s.title}</h3>
-                    </div>
-                    <div className="service-card-bottom">
-                      <div className="service-card-divider" />
-                      <p className="service-card-desc">{s.desc}</p>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ServicesSection />
 
     </main>
   );

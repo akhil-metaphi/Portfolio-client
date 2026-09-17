@@ -234,3 +234,66 @@ export function getFeaturedProjects(): Project[] {
 export function getProjectBySlug(slug: string): Project | undefined {
   return PROJECTS.find(p => p.slug === slug);
 }
+
+export interface StandoutWork {
+  id: string;
+  projectSlug: string;
+  title: string;
+  category: string;
+  imageUrl: string;
+}
+
+export function getStandoutWorks(): StandoutWork[] {
+  // In a real app, this would be fetched from a database (e.g. MongoDB/Admin Panel)
+  return [
+    {
+      id: 'sw-1',
+      projectSlug: 'bombayphilia',
+      title: 'Bombayphilia',
+      category: 'Publication & Brand Identity',
+      imageUrl: '/assets/projects/Bombayphilia/d8b75e_000fbd9754974be0851d856621d6f3be~mv2.webp'
+    },
+    {
+      id: 'sw-2',
+      projectSlug: 'bombayphilia-shoot',
+      title: 'Bombayphilia — Editorial Shoot',
+      category: 'Art Direction & Photography',
+      imageUrl: '/assets/projects/Bombayphilia Shoot/d8b75e_0772efab406b4901841954d3500d7a2f~mv2.webp'
+    },
+    {
+      id: 'sw-3',
+      projectSlug: 'illustration-sketches',
+      title: 'Illustration & Sketches',
+      category: 'Editorial & Vector Artwork',
+      imageUrl: '/assets/projects/Illustration & Sketches/d8b75e_6e96498ab923431f862265e05d2509ed~mv2.webp'
+    },
+    {
+      id: 'sw-4',
+      projectSlug: 'packaging-design',
+      title: 'Packaging Design Showcase',
+      category: 'Packaging & Structural Design',
+      imageUrl: '/assets/projects/Packaging Design/d8b75e_1ab4b59f517040d79b5e5d3cd0f0a2ed~mv2.webp'
+    },
+    {
+      id: 'sw-5',
+      projectSlug: 'text-me',
+      title: 'Text Me',
+      category: 'Poster Series & Typography',
+      imageUrl: '/assets/projects/Text Me/d8b75e_3392ec91323d4128998cbf99ef92b161~mv2.webp'
+    },
+    {
+      id: 'sw-6',
+      projectSlug: 'thinking-cap',
+      title: 'Thinking Cap',
+      category: 'Visual Identity & Guidelines',
+      imageUrl: '/assets/projects/Thinking Cap/d8b75e_1505155f12864f6b841f67e038c7431a~mv2.webp'
+    },
+    {
+      id: 'sw-7',
+      projectSlug: 'live-and-breathe',
+      title: 'Live & Breathe',
+      category: 'Wellness Brand & Editorial',
+      imageUrl: '/assets/projects/Live & Breathe/d8b75e_3bcea87a2f464b40a2f13b10ebcbcf90~mv2.webp'
+    }
+  ];
+}

@@ -25,8 +25,8 @@ footer.minimal-footer {
 /* Headline Title */
 footer h3.footer-cta-headline {
   text-align: center;
-  font-family: 'Jersey 15', sans-serif;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-weight: 500;
   line-height: 1.0;
   letter-spacing: 0.02em;
   color: var(--text-main);
@@ -82,8 +82,8 @@ footer .font-74 {
 }
 
 footer h3.footer-contact-title {
-  font-family: 'Jersey 15', sans-serif;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-weight: 500;
   color: var(--text-main);
   margin: 0;
   line-height: 1;
