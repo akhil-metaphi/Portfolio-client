@@ -139,27 +139,13 @@
 
   .gallery-filter-pills-row {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 8px;
+    flex-wrap: wrap;
     margin-bottom: 24px;
     gap: 10px;
-    width: calc(100% + 40px);
-    margin-left: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .gallery-filter-pills-row::-webkit-scrollbar {
-    display: none;
+    width: 100%;
   }
 
   .gallery-filter-pill {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    white-space: nowrap;
     padding: 8px 18px;
     font-size: 13px;
     min-height: 40px;

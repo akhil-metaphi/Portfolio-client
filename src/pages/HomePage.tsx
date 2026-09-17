@@ -17,10 +17,10 @@ export default function HomePage() {
       else if (window.innerWidth < 1024) setColCount(2);
       else setColCount(3);
     };
-    
+
     // Initial call
     handleResize();
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -59,7 +59,7 @@ export default function HomePage() {
                 <p className="editorial-styled-quote">
                   Works of art<br />
                   make rules,<br />
-                  rules <span className="highlight-script">do not</span>&nbsp;&nbsp;&nbsp;make<br />
+                  rules do not make<br />
                   works of art.
                 </p>
                 <p className="editorial-quote-author">

@@ -398,6 +398,7 @@
   .gallery-layout-row.row-triple .gallery-image-item {
     width: 100% !important;
     flex: 0 0 100% !important;
+    aspect-ratio: auto !important;
   }
 }
 
